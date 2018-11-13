@@ -18,25 +18,25 @@ ArrayList<OrderDetails> orders = null;
 <link href="resources/css/css.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<div id="templatemo_container">
+	<div id="container">
 		<!-- end of menu -->
-		<div id="templatemo_content_bar">
-			<div class="templatemo_product_box">
+		<div id="content_bar">
+			<div class="product_box">
 				<h1></h1>
 			</div>
 		</div>
-		<div id="templatemo_header">
+		<div id="header">
 			
 		</div>
 		<!-- end of header -->
-		<div id="templatemo_content_bar">
-			<div class="templatemo_product_box">
+		<div id="content_bar">
+			<div class="product_box">
 				<h1></h1>
 			</div>
 		</div>
-		<div id="templatemo_content">
+		<div id="content">
 
-			<div id="templatemo_content_left">
+			<div id="content_left">
 				<jsp:include page="Menu.jsp" />
 			</div>
 			<!-- end of content left -->
@@ -107,7 +107,7 @@ ArrayList<OrderDetails> orders = null;
 		</div>
 		<!-- end of content -->
 
-		<div id="templatemo_footer">
+		<div id="footer">
 			<a href="HomePage.html">Home</a> | <a href="LoginPage.jsp"> Login
 			</a> | <a href="LoginPage.jsp">Table Login </a> | <a href="ContactUs.html">Contact Us</a>
 		</div>

@@ -5,7 +5,7 @@
 	Login login =(Login) session.getAttribute(GlobalConstants.USER);
 %>
 
-<div class="templatemo_content_left_section">
+<div class="content_left_section">
 	<h1 style="text-align: center">Raj Resto</h1>
 	<ul>
 		<li><a href=""> <%=new Date() %>

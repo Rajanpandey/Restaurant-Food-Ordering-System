@@ -13,26 +13,26 @@ response.setHeader ("Expires", "0"); //prevents caching at the proxy server
 </head>
 <body>
 	<!--  Free CSS Templates from www.templatemo.com -->
-	<div id="templatemo_container">
+	<div id="container">
 		<!-- end of menu -->
-		<div id="templatemo_content_bar">
-			<div class="templatemo_product_box">
+		<div id="content_bar">
+			<div class="product_box">
 				<h1></h1>
 			</div>
 		</div>
-		<div id="templatemo_header">
+		<div id="header">
 			
 		</div>
 		<!-- end of header -->
-		<div id="templatemo_content_bar">
-			<div class="templatemo_product_box">
+		<div id="content_bar">
+			<div class="product_box">
 				<h1></h1>
 			</div>
 		</div>
-		<div id="templatemo_content">
+		<div id="content">
 
-			<div id="templatemo_content_left">
-				<div class="templatemo_content_left_section">
+			<div id="content_left">
+				<div class="content_left_section">
 					<h1 style="text-align: center">Raj Resto</h1>
 					<ul>
 						<li><a href="HomePage.html"> Home </a></li>
@@ -77,7 +77,7 @@ response.setHeader ("Expires", "0"); //prevents caching at the proxy server
 		</div>
 		<!-- end of content -->
 
-		<div id="templatemo_footer">
+		<div id="footer">
 			<a href="HomePage.html">Home</a> | <a href="LoginPage.jsp"> Login
 			</a> | <a href="LoginPage.jsp">Table Login </a> | <a href="ContactUs.html">Contact Us</a>
 		</div>

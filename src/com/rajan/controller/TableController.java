@@ -4,10 +4,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * @author Pravin P Patil
- *
- */
 public class TableController extends HttpServlet {
 
 	private static final long serialVersionUID = -2019821864628575150L;

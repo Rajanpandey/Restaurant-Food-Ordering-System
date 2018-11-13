@@ -22,30 +22,30 @@
 <link href="resources/css/css.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<div id="templatemo_container">
+	<div id="container">
 		<!-- end of menu -->
-		<div id="templatemo_content_bar">
-			<div class="templatemo_product_box">
+		<div id="content_bar">
+			<div class="product_box">
 				<h1></h1>
 			</div>
 		</div>
-		<div id="templatemo_header">
+		<div id="header">
 			
 		</div>
 		<!-- end of header -->
-		<div id="templatemo_content_bar">
-			<div class="templatemo_product_box">
+		<div id="content_bar">
+			<div class="product_box">
 				<h1></h1>
 			</div>
 		</div>
-		<div id="templatemo_content">
+		<div id="content">
 
-			<div id="templatemo_content_left">
+			<div id="content_left">
 				<jsp:include page="Menu.jsp" />
 			</div>
 			<!-- end of content left -->
 
-			<div id="templatemo_content_right">
+			<div id="content_right">
 			<form action="ViewBillToCook.jsp" method="post">
 			<table style="width: 90%; margin: 10px; padding: 10px; border-style: double">
 				<tr>
@@ -130,7 +130,7 @@
 		</div>
 		<!-- end of content -->
 
-		<div id="templatemo_footer">
+		<div id="footer">
 			<a href="HomePage.html">Home</a> | <a href="LoginPage.jsp"> Login
 			</a> | <a href="LoginPage.jsp">Table Login </a> | <a href="ContactUs.html">Contact Us</a>
 		</div>
