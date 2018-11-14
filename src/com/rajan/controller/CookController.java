@@ -19,13 +19,12 @@ public class CookController extends BaseController {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) {
 		String action = request.getParameter("action");
 		doPostAction(action, request, response);
-
 	}
 
-	public void doPostAction(String action, HttpServletRequest request,
-			HttpServletResponse response) {
+	public void doPostAction(String action, HttpServletRequest request, HttpServletResponse response) {
 		try {
 			String contextPath = request.getContextPath() + "/";
+			
 			if (action.equals("addCategory")) {
 				String name = request.getParameter("cate");
 				if (!cService.isAlreadyExists(name)) {
@@ -39,8 +38,9 @@ public class CookController extends BaseController {
 				}
 				GlobalConstants.JSP_PAGE = contextPath + "AddCategory.jsp";
 				response.sendRedirect(GlobalConstants.JSP_PAGE);
-
-			} else if (action.equals("addItem")) {
+			} 
+			
+			else if (action.equals("addItem")) {
 				Item item = new Item(request.getParameter("itemName"),
 						Integer.parseInt(request.getParameter("categoryId")),
 						Integer.parseInt(request.getParameter("qnt")),
@@ -59,41 +59,37 @@ public class CookController extends BaseController {
 				GlobalConstants.JSP_PAGE = contextPath + "AddItem.jsp";
 				response.sendRedirect(GlobalConstants.JSP_PAGE);
 			}
-			else if(action.equals("updateOStatus"))
-			{
+			
+			else if(action.equals("updateOStatus"))	{
 				int orderId = Integer.parseInt(request.getParameter("orderId"));
 				String status = request.getParameter("status");
 				System.out.println("id = "+orderId+ "  status ="+status);
-				if(cService.updateOrderStatus(orderId, status))
-				{
+				if(cService.updateOrderStatus(orderId, status))	{
 					GlobalConstants.MESSAGE = GlobalConstants.MSG_UPDATE_SUCCESS;
 				}
-				else
-				{
+				else {
 					GlobalConstants.MESSAGE = GlobalConstants.ERROR_UPDATE;
 				}
 				GlobalConstants.JSP_PAGE = contextPath+"ViewOrder.jsp";
 				response.sendRedirect(GlobalConstants.JSP_PAGE);
 			}
-			else if(action.equals("updateItemtatus"))
-			{
+			
+			else if(action.equals("updateItemtatus")) {
 				int orderId = Integer.parseInt(request.getParameter("orderId"));
 				int itemId = Integer.parseInt(request.getParameter("itemId"));
 				String status = request.getParameter("status");
 				System.out.println("id = "+orderId+ " ItemId = "+itemId+" status ="+status);
-				if(cService.updateItemStatus(orderId, itemId, status))
-				{
+				if(cService.updateItemStatus(orderId, itemId, status)) {
 					GlobalConstants.MESSAGE = GlobalConstants.MSG_UPDATE_SUCCESS;
 				}
-				else
-				{
+				else {
 					GlobalConstants.MESSAGE = GlobalConstants.ERROR_UPDATE;
 				}
 				GlobalConstants.JSP_PAGE = contextPath+"ViewOrder.jsp";
 				response.sendRedirect(GlobalConstants.JSP_PAGE);
 			}
-			else if(action.equals("makeOrder"))
-			{
+			
+			else if(action.equals("makeOrder"))	{
 				System.out.println("In Make order");
 				String itemId[] = request.getParameterValues("ItemId");
 				String qnt[] = request.getParameterValues("orderQnt");
@@ -106,40 +102,32 @@ public class CookController extends BaseController {
 				orderMaster.setOrderName(orderName);
 				orderMaster.setOrderStat(OrderMaster.getOrderStat(status));
 				orderMaster.setTableNo(tableNo);
-				if(itemId != null && qnt != null)
-				{
-					if(cService.addOrder(orderMaster))
-					{
+				if(itemId != null && qnt != null) {
+					if(cService.addOrder(orderMaster)) {
 						int orderId = cService.getLastOrderId();
 					
 						ArrayList<OrderDetails> orderDetails = new ArrayList<OrderDetails>();
 						OrderDetails od = new OrderDetails();
 						
-						for(int i=0;i<itemId.length;i++)
-						{
+						for(int i=0;i<itemId.length;i++) {
 							od.setOrderId(orderId);
 							od.setItemId(Integer.parseInt(itemId[i]));
 							od.setQnt(Integer.parseInt(qnt[i]));
 							od.setOrderStat(OrderDetails.getOrderStat(OrderDetails.OrderStatus.STARTED.name()));
 							orderDetails.add(od);
-							//System.out.println(od);
 						}
-						if(cService.addOrderedItems(orderDetails))
-						{
+						if(cService.addOrderedItems(orderDetails)) {
 							GlobalConstants.MESSAGE = "Order Place Successfully";
 						}
-						else
-						{
-							GlobalConstants.MESSAGE = " Error in Order Place";
+						else {
+							GlobalConstants.MESSAGE = " Error in placing the order";
 						}
 					}
-					else
-					{
-						GlobalConstants.MESSAGE = "Error in Order place";
+					else {
+						GlobalConstants.MESSAGE = "Error in placing the order";
 					}
 				}
-				else
-				{
+				else {
 					GlobalConstants.MESSAGE = "Please select valid order";
 				}
 				
@@ -151,5 +139,4 @@ public class CookController extends BaseController {
 			System.out.println("Error in CookController - " + e);
 		}
 	}
-
 }

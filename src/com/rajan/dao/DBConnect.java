@@ -161,59 +161,6 @@ public class DBConnect {
 
 	}
 
-	/*
-	 * public boolean addOrder(ArrayList<Order> os) { int lastOrderId =
-	 * getLastOrderId()+1; for(int i =0;i<os.size();i++) {
-	 * if(!addOrderItem(lastOrderId, os.get(i))) { return false; } } return
-	 * true; }
-	 * 
-	 * public boolean addOrderItem(int lastOrderId, Order o) {
-	 * 
-	 * String SQL =
-	 * "insert into tbl_order (order_id, item_id, order_name, order_desc, table_no, "
-	 * +
-	 * " order_status, table_status, date_time,quantity) values(?,?,?,?,?,?,?,?,?)"
-	 * ; connection = getConnection(); System.out.println ("SQL>> "+SQL);
-	 * boolean result = Boolean.FALSE; try{ if(connection != null) {
-	 * PreparedStatement ps=connection.prepareStatement(SQL);
-	 * 
-	 * ps.setInt(1, lastOrderId); ps.setInt(2, o.getItemId()); ps.setInt(5,
-	 * o.getTableNo()); ps.setInt(9, o.getQuantity());
-	 * 
-	 * ps.setString(3, o.getOrderName()); ps.setString(4, o.getOrderDesc());
-	 * ps.setString(6, o.getOrderStatus().name()); ps.setString(7,
-	 * o.getTableStatus().name()); ps.setString(8, o.getDateTime());
-	 * 
-	 * update = ps.executeUpdate(); if(update > 0) result = Boolean.TRUE; }
-	 * else{ System.out.println ("connection is null in addOrderItem"); }
-	 * 
-	 * } catch(Exception e) { System.out.println ("Error in addOrderItem  "+e);
-	 * 
-	 * } return result; }
-	 * 
-	 * public int getLastOrderId() { String SQL = "select * from order_master";
-	 * connection = getConnection(); int orderId = 0; try{ if(connection!=null)
-	 * { Statement st = (Statement) connection.createStatement(); ResultSet rs =
-	 * st.executeQuery(SQL); while(rs.next()) orderId = rs.getInt("order_id"); }
-	 * else { System.out.println ("Connection is null in getLastOrderId"); } }
-	 * catch(Exception e) { System.out.println ("Error in getLastOrderId "+e); }
-	 * return orderId; } public String getLastOrderStatus() { String SQL =
-	 * "select * from tbl_order"; connection = getConnection(); String orderStat
-	 * = null; try{ if(connection!=null) { Statement st =
-	 * connection.createStatement(); ResultSet rs = st.executeQuery(SQL);
-	 * while(rs.next()) orderStat = rs.getString("order_status"); } else {
-	 * System.out.println ("Connection is null in getOrderID"); } }
-	 * catch(Exception e) { System.out.println ("Error in getOrderId "+e); }
-	 * return orderStat; }
-	 * 
-	 * public String getTableStatus(int tbl_no) { String tblStatus = null; try {
-	 * String SQL = "select * from tbl_order where table_no="+tbl_no; connection
-	 * = getConnection(); if(connection != null) { Statement st =
-	 * connection.createStatement(); ResultSet rs = st.executeQuery(SQL);
-	 * if(rs.next()) { tblStatus = rs.getString("table_status"); } } } catch
-	 * (Exception ex) { ex.printStackTrace(); } return tblStatus; }
-	 */
-
 	public ArrayList<Category> getAllCategory() {
 		String SQL = "SELECT * FROM category";
 		ArrayList<Category> cats = new ArrayList<Category>();

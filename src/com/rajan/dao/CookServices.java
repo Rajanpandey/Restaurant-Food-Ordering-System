@@ -10,15 +10,14 @@ import com.rajan.model.OrderMaster;
 public class CookServices {
 	DBConnect dbconnect = new DBConnect();
 	
-	public ArrayList<Category> getAllCategorys(){
+	public ArrayList<Category> getAllCategorys() {
 		return dbconnect.getAllCategory();
 	}
 	
-	public ArrayList<OrderMaster> getAllOrders(){
+	public ArrayList<OrderMaster> getAllOrders() {
 		return dbconnect.getAllOrders();
 	}
-	public ArrayList<OrderDetails> getAllItems(int orderId)
-	{
+	public ArrayList<OrderDetails> getAllItems(int orderId)	{
 		return dbconnect.getAllItems(orderId);
 	}
 

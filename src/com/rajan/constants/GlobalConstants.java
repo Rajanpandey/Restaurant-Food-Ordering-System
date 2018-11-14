@@ -1,13 +1,12 @@
 package com.rajan.constants;
 
-public class GlobalConstants
-{
+public class GlobalConstants {
 	public static String USER = "user_details";	
 	
-
 	public static String JSP_PAGE = "index.jsp";
 	
 	public static String MESSAGE = "";
+	
 	public static boolean SUCCESS = true;
 	public static boolean ERROR = false;
 	

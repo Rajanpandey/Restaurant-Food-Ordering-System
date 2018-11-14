@@ -30,8 +30,7 @@ public class BaseController extends HttpServlet {
 		}
 	}
 	
-	public void doPostAction(String action, HttpServletRequest request,
-			HttpServletResponse response) {		
+	public void doPostAction(String action, HttpServletRequest request, HttpServletResponse response) {		
 		try {
 			action = action.toLowerCase();
 			if (action.equals("login")) {
@@ -56,10 +55,9 @@ public class BaseController extends HttpServlet {
 		}
 	}
 
-	public void doGetAction(String action, HttpServletRequest request,
-			HttpServletResponse response) {
+	public void doGetAction(String action, HttpServletRequest request, HttpServletResponse response) {
 		try {
-			System.out.println("action in doGet " + action);
+			System.out.println("Action in doGet " + action);
 		} catch (Exception e) {
 			System.out.println("Error in doGetAction - " + e);
 		}

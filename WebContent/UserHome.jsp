@@ -9,7 +9,6 @@ response.setHeader ("Expires", "0");
 Login login =(Login) session.getAttribute(GlobalConstants.USER);
 %> 
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Hotel Ordering System</title>
@@ -81,14 +80,12 @@ Login login =(Login) session.getAttribute(GlobalConstants.USER);
 			<h2>Welcome to Raj Resto, Table <%=login.getUserName() %>!</h2>
 		<%
 		} 
-		%>
-		
+		%>	
 				
       </div>
     </div>
   </div>
 </div>
-
 <script type="text/javascript" src="assets/myjs/slideshow.js"></script>
 </body>
 </html>
